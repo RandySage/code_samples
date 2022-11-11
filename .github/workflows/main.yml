@@ -5,6 +5,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - run: find / -name README.md 2>/dev/null
+    - run: find / -maxdepth 3 -type d 2>/dev/null
     - run: find / -name .git 2>/dev/null
-    - run: find / -maxdepth 4 -type d 2>/dev/null
+    - run: find / -name README.md 2>/dev/null | grep -ve ' /usr/' -ve ' /opt/[hp]' -ve /home/runner/runners/ -ve ' /var/lib'
