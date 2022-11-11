@@ -1,0 +1,10 @@
+name: CI
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - run: find / -name README.md 2>/dev/null
+    - run: find / -name .git 2>/dev/null
+    - run: find / -maxdepth 4 -type d 2>/dev/null
