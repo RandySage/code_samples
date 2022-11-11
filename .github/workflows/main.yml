@@ -5,8 +5,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - run: pwd
-    - run: find -maxdepth 3 2>/dev/null
-    - run: find / -name .git 2>/dev/null
-    - run: find / -maxdepth 2 -type d 2>/dev/null
-    - run: find / -name README.md 2>/dev/null | grep -ve ' /usr/' -ve ' /opt/[hp]' -ve /home/runner/runners/ -ve ' /var/lib'
+    - run: find /home/runner/work -maxdepth 3 2>/dev/null
+    - run: find /home/runner -name .git 2>/dev/null
+    - run: find /home/runner -maxdepth 2 -type d 2>/dev/null
+    - run: find /home/runner -name README.md 2>/dev/null | grep -ve /runners/
